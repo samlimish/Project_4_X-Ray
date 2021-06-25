@@ -2,7 +2,10 @@
 **Sam Lim** <br>
 **James Irving** <br>
 **First Presentation: 6/25/21** <br>
-
+img{
+    height: 240px;
+    width: 240px;
+}
 ![main header](images/front.JPG)
 
 ## Contents
@@ -22,8 +25,9 @@ Due to a shortage of staff and doctors through COVID-19, the St.Jude Children's 
 <a id='Preprocessing'></a>
 ## Preprocessing
 In order for the neural network to be able to read and understand images, I used the ImageDataGenerator from tensorflow.keras. Each pixel's RGB value was divided by 255 so that they ranged from 0 to 1. Also, because the provided validation set was too small, I had to split the test set to create a new validation set.<br>
-![dataprep](images/dataprep.JPG)
-The image on the left shows a normal chest x-ray and the right shows pneumonia chest x-ray
+![dataprep](images/dataprep.JPG)<br>
+The image on the left shows a normal chest x-ray and the right shows pneumonia chest x-ray<br>
+<div
 ![normal](data/train/NORMAL/IM-0115-0001.jpeg)
 ![pneu](data/train/PNEUMONIA/person1_bacteria_2.jpeg)
 
