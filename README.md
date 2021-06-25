@@ -43,11 +43,11 @@ The first set of images is the first iteration of the model that used validation
     <img src='images/model1acccm.JPG' width='340'/>
 </div>
 <br>
-The next two sets of the images are the third iteration of the model. The first set uses validation loss and the secon duses validation accuracy as the stopping metric.
+The next two sets of the images are the third iteration of the model. The first set uses validation loss and the second uses validation accuracy as the stopping metric.
 
 <div>
     <img src='images/model3loss.JPG' width='340'/>
-    <img src='images/model3lossccm.JPG' width='340'/>
+    <img src='images/model3losscm.JPG' width='340'/>
 </div>
 <br>
 <div>
@@ -59,7 +59,17 @@ There was a total of four iteration of the modeling process, but reducing the nu
 
 <a id='Recommendation'></a>
 ## Recommendation 
-As can be observed from the above 
+As can be observed from the above models, the version that uses validation accuracy had overall better performance. And comparing all iterations of the models, I would recommend the 3rd iteration of the model that uses validation accuracy as the stopping metric as it had a high recall score for the true positives and the highest score of true negatives. While other iterations had similar recall scores for the true positive, either their recall score for true negatives were lower or their graph showing the validation loss and validation accuracy did not fit properly.
 
 <a id='Conclusion'></a>
 ## Conclusion 
+
+### Future Work
+For future work, I would like to improve the model's prediction on false positives. While it was very apt in diagnosing pneumonia for patients with pneumonia, it was as much likely to diagnose pneumonia to those who did not have the disease. Possible solutions may be:
+ - Format/align the pictures to show just the thorax region to remove possible mis-detections
+ - Distinguish sections such as the heart to remove possible mis-detections
+ - Separate images of bacterial pneumonia and viral pneumonia for training for ease of diagnosis since they require different treatments. 
+
+### Final Thoughts
+Overall, the project was as challenging as it was insightful. After visiting an A.I. expo and seeing how computer vision was being used to diagnose cancer and how the A.I. that they had created were finding previously unknown indications that could lead to an early diagnosis of breast cancer. The year before this, the doctors had found a tumor-like tissue in her uterus during an annual check up. Fortunately it turned out to be a benign form, but we were worried that she could develop breast cancer as uterine tumors could lead to or were early signs of breast cancer. Because of this previous incident, the use of A.I. in diagnosing cancer spoke to me in a different way, and I became much interested in general A.I. and the use of A.I. in the medical field. Though this project is miles behind compared to what I had seen in the expo, it was meaningful nonetheless.
+
