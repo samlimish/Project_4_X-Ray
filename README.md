@@ -10,6 +10,7 @@
  - <a href='#BusinessProblem'> Business Problem </a>
  - <a href='#Preprocessing'> Preprocessing </a>
  - <a href='#DataModeling'> Data Modeling</a>
+ - <a href='#OverSampling'> Oversampling </a>
  - <a href='#Recommendation'> Recommendation </a>
  - <a href='#Conclusion'> Conclusion </a>
 
@@ -23,13 +24,16 @@ Due to a shortage of staff and doctors through COVID-19, the St.Jude Children's 
 ## Preprocessing
 In order for the neural network to be able to read and understand images, I used the ImageDataGenerator from tensorflow.keras. Each pixel's RGB value was divided by 255 so that they ranged from 0 to 1. Also, because the provided validation set was too small, I had to split the test set to create a new validation set.<br>
 ![dataprep](images/dataprep.JPG)<br>
+Currently, there is an imbalance between the number of normal images and pneumonia images, so each category of images will be given a weight to counter act the imbalance. <br>
+![numimg](images/numberofimages.JPG)<br>
 The image on the left shows a normal chest x-ray and the right shows pneumonia chest x-ray<br>
 <div>
     <img src='data/train/NORMAL/IM-0115-0001.jpeg' width='340'/>
     <img src='data/train/PNEUMONIA/person1_bacteria_2.jpeg' width='340'/>
 </div>
 Such images above are then downsized to 64 x 64 pixel images<br>
-![small1](images/xray1.JPG)
+
+![small1](images/xray1.JPG)<br>
 ![small2](images/xray2.JPG)
 
 
@@ -62,6 +66,11 @@ The next two sets of the images are the third iteration of the model. The first 
 </div>
 <br>
 There was a total of four iteration of the modeling process, but reducing the number of convolutional layers after a certain point impaired the overall model.
+<a id='OverSampling'></a>
+## Oversampling
+As mentioned before, there is a large difference between the number of normal images and pneumonia images in the training data set. While we tried to mitigate this problem by assigning each category different weights, the results could still be improved. Oversampling is a technique that is highly recommended when there is a large imbalance between the binary data. I created another folder that contained two copies of normal images from the training set and 1 copy of normal images from the testing set. <br>
+[osimg](images/OSnumberofimages.JPG)<br>
+Compared to the previous training dataset, the oversampled dataset has a much balanced proportion of normal to pneumonia images. 
 
 <a id='Recommendation'></a>
 ## Recommendation 
