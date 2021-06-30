@@ -28,11 +28,16 @@ The image on the left shows a normal chest x-ray and the right shows pneumonia c
     <img src='data/train/NORMAL/IM-0115-0001.jpeg' width='340'/>
     <img src='data/train/PNEUMONIA/person1_bacteria_2.jpeg' width='340'/>
 </div>
+Such images above are then downsized to 64 x 64 pixel images<br>
+![small1](images/xray1.JPG)
+![small2](images/xray2.JPG)
+
 
 <a id='DataModeling'></a>
 ## Data Modeling
 Using Convolutional Neural Network(CNN), I initially created 10 convolutional layers, 5 maxpooling layers, and 3 dense layers. All iterations used adam as the optimizer, binary crossentropy as the loss function and binary accuracy as the main metric. Each iteration had two versions; the first version used the validation loss as the stopping metric and the other used validation accuracy as the stopping metric. Overall, using validation accuracy as the stopping metric created better models. The goal for each proceeding iteration was to reduce the number of overall layers while increasing/maintaining the overall accuracy of the model. <br>
 The first set of images is the first iteration of the model that used validation loss as the stopping metric, and the second set is the same model using validation accuracy as the stopping metric. The graph clearly indicates that using the validation accuracy helped the overall fitness of the model.<br>
+#### Model 1. Stopping metric = validation loss
 <div>
     <img src='images/model1loss.JPG' width='340'/>
     <img src='images/model1losscm.JPG' width='340'/>
@@ -44,6 +49,7 @@ The first set of images is the first iteration of the model that used validation
 </div>
 <br>
 The next two sets of the images are the third iteration of the model. The first set uses validation loss and the second uses validation accuracy as the stopping metric.
+#### Model 3. Stopping metric = validation loss
 
 <div>
     <img src='images/model3loss.JPG' width='340'/>
