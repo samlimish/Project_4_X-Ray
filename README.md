@@ -41,6 +41,7 @@ Such images above are then downsized to 64 x 64 pixel images<br>
 ## Data Modeling
 Using Convolutional Neural Network(CNN), I initially created 10 convolutional layers, 5 maxpooling layers, and 3 dense layers. All iterations used adam as the optimizer, binary crossentropy as the loss function and binary accuracy as the main metric. Each iteration had two versions; the first version used the validation loss as the stopping metric and the other used validation accuracy as the stopping metric. Overall, using validation accuracy as the stopping metric created better models. The goal for each proceeding iteration was to reduce the number of overall layers while increasing/maintaining the overall accuracy of the model. <br>
 The first set of images is the first iteration of the model that used validation loss as the stopping metric, and the second set is the same model using validation accuracy as the stopping metric. The graph clearly indicates that using the validation accuracy helped the overall fitness of the model.<br>
+
 #### Model 1. Stopping metric = validation loss
 <div>
     <img src='images/model1loss.JPG' width='340'/>
@@ -76,7 +77,7 @@ There was a total of four iteration of the modeling process, but reducing the nu
 ## Oversampling
 As mentioned before, there is a large difference between the number of normal images and pneumonia images in the training data set. While we tried to mitigate this problem by assigning each category different weights, the results could still be improved. Oversampling is a technique that is highly recommended when there is a large imbalance between the binary data. I created another folder that contained two copies of normal images from the training set and 1 copy of normal images from the testing set. <br>
 
-[osimg](images/OSnumberofimages.JPG)<br>
+![osimg](images/OSnumberofimages.JPG)<br>
 
 Compared to the previous training dataset, the oversampled dataset has a much balanced proportion of normal to pneumonia images. With the oversampled dataset, I trained the same models above and was able to achieve much better results. <br>
 
@@ -86,6 +87,7 @@ Compared to the previous training dataset, the oversampled dataset has a much ba
     <img src='images/osmodel1loss.JPG' width='340'/>
     <img src='images/osmodel1losscm.JPG' width='340'/>
 </div><br>
+
 #### Oversampled Model 2. Stopping metric = validation accuracy
 <div>
     <img src='images/osmodel2acc.JPG' width='340'/>
