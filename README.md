@@ -45,37 +45,39 @@ The first set of images is the first iteration of the model that used validation
 <div>
     <img src='images/model1loss.JPG' width='340'/>
     <img src='images/model1losscm.JPG' width='340'/>
-</div>
-<br>
-#### Model 1. Stopping metric = validation accuracy
+</div><br>
 
+#### Model 1. Stopping metric = validation accuracy
 <div>
     <img src='images/model1acc.JPG' width='340'/>
     <img src='images/model1acccm.JPG' width='340'/>
-</div>
-<br>
-The next two sets of the images are the third iteration of the model. The first set uses validation loss and the second uses validation accuracy as the stopping metric.
+</div><br>
+
+The next two sets of the images are the third iteration of the model. The first set uses validation loss and the second uses validation accuracy as the stopping metric.<br>
+
 #### Model 3. Stopping metric = validation loss
 
 <div>
     <img src='images/model3loss.JPG' width='340'/>
     <img src='images/model3losscm.JPG' width='340'/>
-</div>
-<br>
+</div><br>
+
 #### Model 3. Stopping metric = validation accuracy
 
 <div>
     <img src='images/model3acc.JPG' width='340'/>
     <img src='images/model3acccm.JPG' width='340'/>
-</div>
-<br>
+</div><br>
+
 There was a total of four iteration of the modeling process, but reducing the number of convolutional layers after a certain point impaired the overall model.
 
 <a id='OverSampling'></a>
 
 ## Oversampling
 As mentioned before, there is a large difference between the number of normal images and pneumonia images in the training data set. While we tried to mitigate this problem by assigning each category different weights, the results could still be improved. Oversampling is a technique that is highly recommended when there is a large imbalance between the binary data. I created another folder that contained two copies of normal images from the training set and 1 copy of normal images from the testing set. <br>
+
 [osimg](images/OSnumberofimages.JPG)<br>
+
 Compared to the previous training dataset, the oversampled dataset has a much balanced proportion of normal to pneumonia images. With the oversampled dataset, I trained the same models above and was able to achieve much better results. <br>
 
 
