@@ -82,9 +82,8 @@ Compared to the previous training dataset, the oversampled dataset has a much ba
 #### Oversampled Model 1. Stopping metric = validation loss
 <div>
     <img src='images/osmodel1loss.JPG' width='340'/>
-    <img src='images/osmodel1lossccm.JPG' width='340'/>
-</div>
-<br>
+    <img src='images/osmodel1losscm.JPG' width='340'/>
+</div><br>
 #### Oversampled Model 2. Stopping metric = validation accuracy
 <div>
     <img src='images/osmodel2acc.JPG' width='340'/>
@@ -94,7 +93,7 @@ Compared to the previous training dataset, the oversampled dataset has a much ba
 #### Oversampled Model 3. Stopping metric = validation loss
 <div>
     <img src='images/osmodel3loss.JPG' width='340'/>
-    <img src='images/osmodel3lossccm.JPG' width='340'/>
+    <img src='images/osmodel3losscm.JPG' width='340'/>
 </div><br>
 
 #### Oversampled Model 4. Stopping metric = validation accuracy
