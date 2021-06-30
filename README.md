@@ -33,7 +33,7 @@ The image on the left shows a normal chest x-ray and the right shows pneumonia c
 </div>
 Such images above are then downsized to 64 x 64 pixel images<br>
 
-![small1](images/xray1.JPG)<br>
+![small1](images/xray1.JPG)
 ![small2](images/xray2.JPG)
 
 
@@ -47,6 +47,8 @@ The first set of images is the first iteration of the model that used validation
     <img src='images/model1losscm.JPG' width='340'/>
 </div>
 <br>
+#### Model 1. Stopping metric = validation accuracy
+
 <div>
     <img src='images/model1acc.JPG' width='340'/>
     <img src='images/model1acccm.JPG' width='340'/>
@@ -60,21 +62,52 @@ The next two sets of the images are the third iteration of the model. The first 
     <img src='images/model3losscm.JPG' width='340'/>
 </div>
 <br>
+#### Model 3. Stopping metric = validation accuracy
+
 <div>
     <img src='images/model3acc.JPG' width='340'/>
     <img src='images/model3acccm.JPG' width='340'/>
 </div>
 <br>
 There was a total of four iteration of the modeling process, but reducing the number of convolutional layers after a certain point impaired the overall model.
+
 <a id='OverSampling'></a>
+
 ## Oversampling
 As mentioned before, there is a large difference between the number of normal images and pneumonia images in the training data set. While we tried to mitigate this problem by assigning each category different weights, the results could still be improved. Oversampling is a technique that is highly recommended when there is a large imbalance between the binary data. I created another folder that contained two copies of normal images from the training set and 1 copy of normal images from the testing set. <br>
 [osimg](images/OSnumberofimages.JPG)<br>
-Compared to the previous training dataset, the oversampled dataset has a much balanced proportion of normal to pneumonia images. 
+Compared to the previous training dataset, the oversampled dataset has a much balanced proportion of normal to pneumonia images. With the oversampled dataset, I trained the same models above and was able to achieve much better results. <br>
+
+
+#### Oversampled Model 1. Stopping metric = validation loss
+<div>
+    <img src='images/osmodel1loss.JPG' width='340'/>
+    <img src='images/osmodel1lossccm.JPG' width='340'/>
+</div>
+<br>
+#### Oversampled Model 2. Stopping metric = validation accuracy
+<div>
+    <img src='images/osmodel2acc.JPG' width='340'/>
+    <img src='images/osmodel2acccm.JPG' width='340'/>
+</div><br>
+
+#### Oversampled Model 3. Stopping metric = validation loss
+<div>
+    <img src='images/osmodel3loss.JPG' width='340'/>
+    <img src='images/osmodel3lossccm.JPG' width='340'/>
+</div><br>
+
+#### Oversampled Model 4. Stopping metric = validation accuracy
+<div>
+    <img src='images/osmodel4acc.JPG' width='340'/>
+    <img src='images/osmodel4acccm.JPG' width='340'/>
+</div><br>
+Not all of the iterations are displayed in this README, but they are available in the main .ipynb page. 
 
 <a id='Recommendation'></a>
 ## Recommendation 
-As can be observed from the above models, the version that uses validation accuracy had overall better performance. And comparing all iterations of the models, I would recommend the 3rd iteration of the model that uses validation accuracy as the stopping metric as it had a high recall score for the true positives and the highest score of true negatives. While other iterations had similar recall scores for the true positive, either their recall score for true negatives were lower or their graph showing the validation loss and validation accuracy did not fit properly.
+Overall, I would recommend using the 4th iteration of the model from the oversampled dataset that uses validation accuracy as its stopping metric. This version of the iteration was able to achieve 88% recall score for true negatives and 98% for true positives. This model is not to be used as a be it end all method of diagnosing pneumonia in patients; however, but should be used to facilitate a doctor's diagnosis.<br>
+For example, if the modeling diagnosed a patient to be suffering from pneumonia, but in reality did not suffer from it, the patient will have to go through unnecessary treatment that will increase hospital bills as well as create medical complications as he or she could have been suffering from a different disease. As mentioned before, this model will be able to diagnose 98% of pneumonia patients as pneumonia patients, but 12% of normal patients could be diagnosed as pneumonia patients, so it is advised that doctors double check the patients' x-ray images if the model's result comes back as pneumonia. 
 
 <a id='Conclusion'></a>
 ## Conclusion 
